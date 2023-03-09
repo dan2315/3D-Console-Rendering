@@ -2,6 +2,12 @@ struct Vector2Int
 {
     int x, y;
 
+    Vector2Int()
+    {
+        this->x = 0;
+        this->y = 0;
+    }
+
     Vector2Int(int x, int y)
     {
         this->x = x;
