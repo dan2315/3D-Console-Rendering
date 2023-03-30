@@ -8,9 +8,21 @@
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
-				"${file}",
+				"${workspaceFolder}/assets/main.cpp",
+				"${workspaceFolder}/assets/DataTypes/Vectors/Vector3.cpp",
+				"${workspaceFolder}/assets/DataTypes/Matrices/Matrix.cpp",
 				"-o",
-				"${fileDirname}\\build\\${fileBasenameNoExtension}.exe"
+				"${workspaceFolder}\\build\\app.exe",
+				"-I",
+				"${workspaceFolder}/assets",
+				"-I",
+				"${workspaceFolder}/assets/DataTypes/Vectors",
+				"-I",
+				"${workspaceFolder}/assets/DataTypes/Camera",
+				"-I",
+				"${workspaceFolder}/assets/DataTypes/Matrices",
+				"-I",
+				"${workspaceFolder}/assets/DataTypes/Mesh",
 			],
 			"options": {
 				"cwd": "${fileDirname}"

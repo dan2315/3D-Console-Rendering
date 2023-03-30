@@ -1,64 +1,35 @@
+#pragma once
+
 #include <math.h>
 #include <sstream>
+#include <Matrix.h>
+#include <Vector2.h>
+
+struct Matrix;
 
 struct Vector3
 {
     float x, y, z;
 
-    Vector3()
-    {
-        this->x = 0;
-        this->y = 0;
-        this->z = 0;
-    }
+    Vector3();
 
-    Vector3(float x, float y, float z)
-    {
-        this->x = x;
-        this->y = y;
-        this->z = z;
-    }
+    Vector3(float x, float y, float z);
 
-    operator Vector2() const { return Vector2(x, y); }
+    operator Vector2() const;
 
-    Vector3 operator+(Vector3 other)
-    {
-        return Vector3(x + other.x, y + other.y,z + other.z );
-    }
+    Vector3 operator+(Vector3 other);
 
-    Vector3 operator-(Vector3 other)
-    {
-        return Vector3(x - other.x, y - other.y, z - other.z);
-    }
+    Vector3 operator-(Vector3 other);
 
-    Vector3 operator*(float other)
-    {
-        return Vector3(x * other, y * other, z * other);
-    }
+    Vector3 operator*(float other);
 
-    Vector3 operator/(float other)
-    {
-        return Vector3(x / other, y / other, z/ other);
-    }
+    Vector3 operator/(float other);
 
-    Matrix operator*(Matrix other)
-    {
-        return this->ToMatrix() * other;
-    }
+    Matrix operator*(Matrix other);
 
-    Matrix ToMatrix()
-    {
-        return Matrix({{x,y,z}});
-    }
+    Matrix ToMatrix();
 
-    float Magnitude()
-    {
-        return sqrt(x * x + y * y);
-    }
+    float Magnitude();
 
-    Vector3 Normalized()
-    {
-        float magnitude = Magnitude();
-        return Vector3(x / magnitude, y / magnitude, z/ magnitude);
-    }
+    Vector3 Normalized();
 };

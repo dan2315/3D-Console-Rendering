@@ -13,8 +13,8 @@ public:
     {
         Mesh cube;
         cube.vertices = {
-            Vector3(-0.5, -0.5, -0.5), Vector3(0.5, -0.5, -0.5), Vector3(-0.5, 0.5, -0.5), Vector3(0.5, 0.5, -0.5),
-            Vector3(-0.5, -0.5, 0.5), Vector3(0.5, -0.5, 0.5), Vector3(-0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5)};
+            Vector3(-10, -10, -10 + 20), Vector3(10, -10, -10 + 20), Vector3(-10, 10, -10 + 20), Vector3(10, 10, -10 + 20),
+            Vector3(-10, -10, 10 + 20), Vector3(10, -10, 10 + 20), Vector3(-10, 10, 10 + 20), Vector3(10, 10, 10 + 20)};
         cube.simpleConnections = {0, 1, 0, 2, 0, 4, 7, 3, 7, 5, 7, 6, 2, 3, 2, 6, 5, 1, 5, 4, 1, 3, 4, 6};
         cube.triangles = {
             Triangle(0, 2, 1),

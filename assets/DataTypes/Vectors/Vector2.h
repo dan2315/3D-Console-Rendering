@@ -1,4 +1,6 @@
+#pragma once
 #include <math.h>
+
 
 struct Vector2
 {

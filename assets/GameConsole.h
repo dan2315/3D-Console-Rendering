@@ -2,15 +2,16 @@
 #include <stdio.h>
 #include <math.h>
 #include <windows.h>
-#include "DataTypes/Vectors/Vector2.h"
-#include "DataTypes/Matrices/Matrix.h"
+#include <Vector2.h>
+#include <Matrix.h>
+
 
 class GameConsole
 {
 private:
     int width = 240;
     int height = 60;
-    float aspect = (float)width / height;
+    float aspectRatio = (float)width / height;
     float pixelAspect = 11.0f / 24.0f;
     char gradient[18] = " .:!/r(l1Z4H9W8$@";
     int gradientSize = std::size(gradient) - 2;
@@ -41,6 +42,8 @@ private:
     }
 
 public:
+    float AspecRatio() { return aspectRatio; }
+
     GameConsole()
     {
         SetWindow(width, height);
@@ -59,9 +62,6 @@ public:
                 screen[y * width + x] = ' ';
             }
         }
-
-        screen[width * height - 1] = '\0';
-        WriteConsoleOutputCharacterW(hConsole, screen, width * height, {0, 0}, &dwBytesWritten);
     }
 
     void DrawLine(Vector2 start, Vector2 end)
